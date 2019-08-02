@@ -7,15 +7,16 @@ import * as actions from '../actions';
 // By default import will look for a file called index.js in any directory
 
 class PaintingContainer extends Component {
-  componentDidMount() {
+  async componentDidMount() {
     // NOTE: no async stuff yet. For now we'll
     // just fetch some data in another file.
     // We'll still use the lifecycle method
     // so we can easily add async later
-    this.props.fetchPaintings();
+    await this.props.fetchPaintings();    
+    this.props.selectPainting(this.props.paintings[0].id)
   }
 
-  render() {
+  render() {   
     return (
       <div className="row">
         <div className="six wide column">
