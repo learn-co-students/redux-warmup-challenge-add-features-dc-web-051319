@@ -20,7 +20,9 @@ const PaintingShow = ({ painting }) => {
           </p>
           <p>{painting.artist.hometown}</p>
         </div>
-        <div className="ui basic red right aligned button">Delete</div>
+        <div className="ui basic red right aligned button" onClick={painting.delete}>
+          Delete
+        </div>
       </div>
     </div>
   );
