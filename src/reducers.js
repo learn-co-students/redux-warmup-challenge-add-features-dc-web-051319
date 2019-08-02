@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { FETCH_PAINTINGS, SELECT_ACTIVE_PAINTING } from './actions/types';
+import { FETCH_PAINTINGS, SELECT_ACTIVE_PAINTING, DELETE_PAINTINGS } from './actions/types';
 
 const paintingsReducer = (state = [], action) => {
   switch (action.type) {
@@ -10,7 +10,7 @@ const paintingsReducer = (state = [], action) => {
   }
 };
 
-const activePaintingIdReducer = (state = null, action) => {
+const activePaintingIdReducer = (state = 1, action) => {
   switch (action.type) {
     case SELECT_ACTIVE_PAINTING:
       return action.id;
